@@ -100,10 +100,14 @@ function onFormSubmit(e) {
 
   "</body>";
   
+//  var usdRate=getUsdRate();
+
+  
+  
   var htmlUkr = "<body>"+
   "Доброго дня "+ firstName + " " + lastName + "," + "<br />" +
   "Дякуємо за Ваше замовлення. У додатку надсилаю Вам рахунок." + "<br /><br />" +
-
+//  "Вартість замовлення в рахунку вказана в американських доларах, курс долара на сьогодні становить  " + usdRate + " грн за один долар<br />" +
   "Найзручнішим способом отримання книг в межах України є сервіс “Нова Пошта”. Здійснити оплату можна безпосередньо у відділенні НП при отримані замовлення." + "<br /><br />" +
 
   "Прошу перевірити вказану Вами інформацію. У відповіді на цього листа, підтвердіть Вашу згоду на виконання замовлення." + "<br />" +
@@ -135,7 +139,13 @@ function onFormSubmit(e) {
 
 }
 
-
+//function getUsdRate() {
+//  var url = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json&valcode=usd";
+//  var response = UrlFetchApp.fetch(url);
+//  var json = response.getContentText();
+//  var data = JSON.parse(json);
+//  return data[0].rate;
+//}
 
 function findPromoCodeMatch(promoCode) {
   var ss = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("PartnersDiscounts");
@@ -156,7 +166,10 @@ function findPromoCodeMatch(promoCode) {
   
 }
 
-
+//function newFunction (){
+//  var a = getUsdRate();
+//  Logger.log(a);
+//}
 
 
 
